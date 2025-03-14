@@ -1,0 +1,157 @@
+
+        /* Custom styles that extend Tailwind */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+    background: rgba(30, 30, 46, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #0ea5e9, #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Loading animations */
+.dot-pulse {
+    position: relative;
+    left: -9999px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    color: currentColor;
+    box-shadow: 9999px 0 0 -5px;
+    animation: dot-pulse 1.5s infinite linear;
+    animation-delay: 0.25s;
+}
+
+.dot-pulse::before, .dot-pulse::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    color: currentColor;
+}
+
+.dot-pulse::before {
+    box-shadow: 9984px 0 0 -5px;
+    animation: dot-pulse-before 1.5s infinite linear;
+    animation-delay: 0s;
+}
+
+.dot-pulse::after {
+    box-shadow: 10014px 0 0 -5px;
+    animation: dot-pulse-after 1.5s infinite linear;
+    animation-delay: 0.5s;
+}
+
+@keyframes dot-pulse-before {
+    0% { box-shadow: 9984px 0 0 -5px; }
+    30% { box-shadow: 9984px 0 0 2px; }
+    60%, 100% { box-shadow: 9984px 0 0 -5px; }
+}
+
+@keyframes dot-pulse {
+    0% { box-shadow: 9999px 0 0 -5px; }
+    30% { box-shadow: 9999px 0 0 2px; }
+    60%, 100% { box-shadow: 9999px 0 0 -5px; }
+}
+
+@keyframes dot-pulse-after {
+    0% { box-shadow: 10014px 0 0 -5px; }
+    30% { box-shadow: 10014px 0 0 2px; }
+    60%, 100% { box-shadow: 10014px 0 0 -5px; }
+}
+
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Message bubble animations */
+.message-bubble {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.message-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rainforest message styling */
+.rainforest-message .bg-gray-100 {
+    background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+}
+
+.dark .rainforest-message .bg-dark-200 {
+    background: linear-gradient(135deg, #1a3c1a, #2e5c2e);
+}
+
+/* Chat item styling */
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.chat-item:hover .chat-actions {
+    opacity: 1;
+}
