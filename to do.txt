@@ -1,0 +1,9 @@
+
+ changes needed 
+add functionlity as if there are some numbering or something then process first and after that
+ continue for the second one it can be in any alphabetical , or numerical , oor special symbols and else analyze all and  
+ share combine respose
+
+ and also add one option while using create image brfore prompt hits api to generate image 
+
+also dipslay direct answer while clicking on the existing chat

@@ -11,7 +11,9 @@
     background: rgba(30, 30, 46, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
+.cursor-pointer {
+    cursor: pointer;
+}
 .gradient-text {
     background: linear-gradient(90deg, #0ea5e9, #d946ef);
     -webkit-background-clip: text;
